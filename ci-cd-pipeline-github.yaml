@@ -199,20 +199,20 @@ Resources:
         - !Ref CiCdPipelineCloudformationDeploymentRole
         - !Ref ActualPipelineCloudformationDeploymentRole
 
-  DBAccessPolicy:
-    Type: AWS::IAM::Policy
-    Properties:
-      PolicyName: DB_access_policy
-      PolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          -
-            Effect: Allow
-            Action:
-              - rds:*
-            Resource: "*"
-      Roles:
-        - !Ref ActualPipelineCloudformationDeploymentRole
+  # DBAccessPolicy:
+  #   Type: AWS::IAM::Policy
+  #   Properties:
+  #     PolicyName: DB_access_policy
+  #     PolicyDocument:
+  #       Version: '2012-10-17'
+  #       Statement:
+  #         -
+  #           Effect: Allow
+  #           Action:
+  #             - rds:*
+  #           Resource: "*"
+  #     Roles:
+  #       - !Ref ActualPipelineCloudformationDeploymentRole
 
   # Role to deploy CI/CD cloudformation stack. That will allow
   # Cloudformation stack to provde necessary changes during its update.
@@ -252,6 +252,7 @@ Resources:
             Effect: Allow
             Action:
               - ec2:DescribeImages
+              - autoscaling:*
               - eks:CreateCluster
               - eks:DeleteCluster
               - eks:DescribeCluster
