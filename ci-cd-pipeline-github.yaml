@@ -313,6 +313,7 @@ Resources:
 
   # This bucket is required by codepipeline
   S3BucketPipelineArtifacts:
+    DependsOn: PipelineResourceManipulationRole
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Ref ArtifactsS3BucketName
