@@ -256,6 +256,7 @@ Resources:
               - eks:CreateCluster
               - eks:DeleteCluster
               - eks:DescribeCluster
+              - s3:DeleteBucket
             Resource: "*"
       Roles:
         - !Ref ActualPipelineCloudformationDeploymentRole
