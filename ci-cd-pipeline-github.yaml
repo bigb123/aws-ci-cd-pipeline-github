@@ -469,6 +469,8 @@ Resources:
     Properties:
       RoleName: Remove-s3-objects-function-role
       Description: Role that allows the Lambda function to remove all objects from the s3 bucket.
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
       AssumeRolePolicyDocument:
         Version: 2012-10-17
         Statement:
