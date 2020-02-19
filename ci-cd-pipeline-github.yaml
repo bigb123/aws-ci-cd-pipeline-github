@@ -536,7 +536,7 @@ Resources:
 
   RemoveS3ObjectsCustomResource:
     Type: Custom::MakeBucketEmpty
-    DependsOn: S3BucketPipelineArtifacts
+    # DependsOn: S3BucketPipelineArtifacts
     Properties:
       ServiceToken: !GetAtt RemoveS3ObjectsFunction.Arn
       BucketName: !Ref S3BucketPipelineArtifacts
