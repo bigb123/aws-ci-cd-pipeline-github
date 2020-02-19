@@ -259,6 +259,7 @@ Resources:
               - s3:DeleteBucket
               - lambda:DeleteFunction
               - lambda:CreateFunction
+              - lambda:InvokeFunction
             Resource: "*"
       Roles:
         - !Ref ActualPipelineCloudformationDeploymentRole
