@@ -493,6 +493,7 @@ Resources:
       Role: !GetAtt RemoveS3ObjectsFunctionRole.Arn
       Runtime: python3.7
       Timeout: 60
+      Handler: index.handler
       Code:
         ZipFile: |
           #!/usr/bin/env python
