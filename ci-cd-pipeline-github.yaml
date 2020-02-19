@@ -495,10 +495,9 @@ Resources:
       Role: !GetAtt RemoveS3ObjectsFunctionRole.Arn
       Runtime: python3.7
       Timeout: 60
-      Handler: index.handler
+      Handler: index.lambda_handler
       Code:
         ZipFile: |
-          #!/usr/bin/env python
           # -*- coding: utf-8 -*-
 
           import json
@@ -536,7 +535,7 @@ Resources:
 
   RemoveS3ObjectsCustomResource:
     Type: Custom::MakeBucketEmpty
-    # DependsOn: S3BucketPipelineArtifacts
+    DependsOn: S3BucketPipelineArtifacts
     Properties:
       ServiceToken: !GetAtt RemoveS3ObjectsFunction.Arn
       BucketName: !Ref S3BucketPipelineArtifacts
