@@ -49,18 +49,18 @@ Parameters:
     Description: >
       Name of the actual repository that will be deployed on Cloudformation.
     Type: String
-    Default: aws-kubernetes
+    Default: Webiny-AWS-role
 
   GithubActualStackTemplateName:
     Description: >
       Name of the template file of actual stack.
     Type: String
-    Default: eks-template.yaml
+    Default: role.yaml
 
   ActualStackName:
     Description: Name of the actual Cloudformation stack that has to be deployed.
     Type: String
-    Default: kubernetes-stack
+    Default: webiny-role-stack
 
   ArtifactsS3BucketName:
     Description: Name of S3 bucket that will keep CodePipeline Artifacts
