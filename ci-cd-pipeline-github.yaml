@@ -49,18 +49,18 @@ Parameters:
     Description: >
       Name of the actual repository that will be deployed on Cloudformation.
     Type: String
-    Default: Webiny-AWS-role
+    Default: Webiny-AWS-permissions
 
   GithubActualStackTemplateName:
     Description: >
       Name of the template file of actual stack.
     Type: String
-    Default: role.yaml
+    Default: permissions.yaml
 
   ActualStackName:
     Description: Name of the actual Cloudformation stack that has to be deployed.
     Type: String
-    Default: webiny-role-stack
+    Default: webiny-permissions-stack
 
   ArtifactsS3BucketName:
     Description: Name of S3 bucket that will keep CodePipeline Artifacts
